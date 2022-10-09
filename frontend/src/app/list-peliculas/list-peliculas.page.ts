@@ -33,4 +33,15 @@ export class ListPeliculasPage implements OnInit {
   updatePelicula(){
     this.router.navigateByUrl("/update-pelicula");
   }
+
+  deletePelicula(id){
+    if (window.confirm('Are you sure?')) {
+      this.peliculaService. deletePelicula(id)
+      .subscribe(() => {
+          this.ionViewDidEnter(); 
+          console.log('Pelicula deleted!')
+        }
+      )
+    }
+  }
 }

@@ -29,10 +29,10 @@ export class PeliculaService {
     formData.set("fecha", pelicula.fecha);
     formData.set("file", blob);
 
-    return this.httpClient.put(this.endPoint + "/" + pelicula.id, formData);
+    return this.httpClient.put(`${this.endPoint}/${pelicula.id}`, formData);
   }
 
-  deletePelicula(){
-    return this.httpClient.delete(this.endPoint);
+  deletePelicula(id){
+    return this.httpClient.delete(this.endPoint + '/' + id);
   }
 }
